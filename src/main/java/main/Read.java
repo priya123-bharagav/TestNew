@@ -5,9 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -27,7 +25,7 @@ public class Read {
 		String content = null;
 
 		try {
-			content = Files.lines(Paths.get(filePath)).collect(Collectors.joining(System.lineSeparator()));
+			content = Files.lines(Paths.get(filePath)).collect(Collectors.joining());
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
