@@ -34,8 +34,7 @@ public class Read {
 				Map.Entry<String, String> entry = itr.next();
 				content.stream().forEach(item -> {
 					if (item.equals(entry.getKey())) {
-						String key = entry.getKey();
-						content.set(content.indexOf(key), entry.getValue());
+						content.set(content.indexOf(entry.getKey()), entry.getValue());
 						counter.getAndIncrement();
 					}
 				});
