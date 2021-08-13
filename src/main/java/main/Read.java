@@ -28,11 +28,14 @@ public class Read {
 					.asList(Files.lines(Paths.get(filePath)).collect(Collectors.joining()).split("\\W+"));
 
 			Iterator<Map.Entry<String, String>> itr = properties.entrySet().iterator();
-
+			
 			while (itr.hasNext()) {
 				AtomicInteger counter = new AtomicInteger(0);
+				
 				Map.Entry<String, String> entry = itr.next();
-				content.stream().forEach(item -> {
+				content.forEach(item -> 
+				{
+					
 					if (item.equals(entry.getKey())) {
 						content.set(content.indexOf(entry.getKey()), entry.getValue());
 						counter.getAndIncrement();
